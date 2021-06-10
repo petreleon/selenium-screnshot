@@ -19,6 +19,6 @@ for count, line in enumerate(lines):
     S = lambda X: driver.execute_script('return document.body.parentNode.scroll'+X)
     driver.set_window_size(S('Width'),S('Height')) # May need manual adjustment
     driver.execute_script("window.scrollTo(0, document.body.scrollHeight)") 
-    driver.find_element_by_id('WidgetConfigurator-preview').screenshot('web_screenshot'+str(count)+'.png')
+    driver.find_element_by_id('WidgetConfigurator-preview').screenshot(line.split('/')[-1]+'.png')
 
 driver.quit()
